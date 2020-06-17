@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <!-- Fontawesome CDN -->
+    <script src="https://kit.fontawesome.com/afc9bccb61.js" crossorigin="anonymous"></script>
+    <!-- Boostrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Test Zerogrey</title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li>
+                    <img class="logo" src="/images/logo-lasportiva.png" alt="logo">
+                </li>
+                <li class="nav-box">
+                    <a href="#"> Shop </a>
+                </li>
+                <li class="nav-box">
+                    <a href="#"> La Sportiva Experience </a>
+                </li>
+            </ul>
+            <form action="/search" class="form-inline my-2 my-lg-0" method="POST">
+                <input class="nav-src form-control mr-sm-2" type="text" name="search" placeholder="Search"
+                    aria-label="Search">
+                <i class="fas fa-search"></i>
+                <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"
+                    tabindex="-1" />
+            </form>
+        </div>
+    </nav>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Ooops!</h1>
+            <p class="lead">I haven't found what you were looking for!</p>
+            <button type="button" class="btn btn-outline-dark"><a href="/"> Go back </a></button>
+        </div>
+    </div>

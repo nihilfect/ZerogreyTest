@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const http = require("http");
+require("dotenv").config();
 
 const app = express();
 
@@ -13,7 +14,7 @@ app.set("view engine", "ejs");
 
 app.get("/", function (req, res) {
     var chunks = [];
-    const url = "http://interviews-env.b8amvayt6w.eu-west-1.elasticbeanstalk.com/products";
+    const url = process.env.ENDPOINT_1;
     http.get(url, function (response) {
         response.on("data", function (data) {
             chunks.push(data);
@@ -37,7 +38,7 @@ app.post("/search", function (req, res) {
 
 app.get("/products/:nomeProdotto", function (req, res) {
     var chunks = [];
-    const url = "http://interviews-env.b8amvayt6w.eu-west-1.elasticbeanstalk.com/products?search=" + req.params.nomeProdotto;
+    const url = process.env.ENDPOINT_1Q + req.params.nomeProdotto;
     http.get(url, function (response) {
         response.on("data", function (data) {
             chunks.push(data);

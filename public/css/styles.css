@@ -278,6 +278,24 @@ a:hover {
     height: 50px;
 }
 
+.small-img-bigger {
+    animation-name: bigger;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bigger {
+    0% {
+        width: 50px;
+        height: 50px;
+    }
+
+    100% {
+        width: 150px;
+        height: 150px;
+    }
+}
+
 @media (max-width: 767px) {
     #products .container {
         margin-top: 170px;

@@ -13,3 +13,11 @@ $(".card").on("mouseleave", function () {
 $("nav i").on("click", function() {
     $(".form-inline").submit();
 })
+
+$(".small-imgs").on("mouseleave", function () {
+    $(".small-imgs").addClass("small-img-bigger");
+})
+
+$(".card").on("mouseleave", function () {
+    $(".small-imgs").removeClass("small-img-bigger");
+})

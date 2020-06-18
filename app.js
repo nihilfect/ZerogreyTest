@@ -15,7 +15,7 @@ app.set("view engine", "ejs");
 
 app.get("/", function (req, res) {
     var chunks = [];
-    const url = "http://interviews-env.b8amvayt6w.eu-west-1.elasticbeanstalk.com/products";
+    const url = process.env.ENDPOINT;
     http.get(url, function (response) {
         response.on("data", function (data) {
             chunks.push(data);
@@ -48,7 +48,7 @@ app.post("/search", function (req, res) {
 
 app.get("/products/:nomeProdotto", function (req, res) {
     var chunks = [];
-    const url = "http://interviews-env.b8amvayt6w.eu-west-1.elasticbeanstalk.com/products?search=" + req.params.nomeProdotto;
+    const url = process.env.ENDPOINT_Q + req.params.nomeProdotto;
     http.get(url, function (response) {
         response.on("data", function (data) {
             chunks.push(data);

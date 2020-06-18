@@ -5,6 +5,8 @@ const http = require("http");
 
 const app = express();
 
+let viewAll = 0;
+
 app.use(bodyParser.urlencoded({
     extended: true
 }));
@@ -22,14 +24,23 @@ app.get("/", function (req, res) {
             var schema = JSON.parse(data);
             if (response.statusCode !== 200) {
                 res.send("Non ho trovato nulla!");
-            } else {
+            } else if (viewAll === 0) {
                 res.render("home", {
-                    schemaJS: schema
-                });
-            }
+                    schemaJS: schema, lunghezzaJSON: 8
+                }) } else {
+                    res.render("home", {
+                        schemaJS: schema, lunghezzaJSON: schema.length
+                    });
+                    viewAll = 0;
+                }
+            })
         })
+    });
+
+    app.post("/all", function(req, res) {
+        viewAll = 1;
+        res.redirect("/");
     })
-});
 
 app.post("/search", function (req, res) {
     res.redirect("/products/" + req.body.search);

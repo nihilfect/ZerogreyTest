@@ -3,9 +3,12 @@
     <div class="container">
         <span class="dir"> Home </span>
         <h1> In primo piano: </h1>
+        <form action="/all" method="POST">
+            <button class="btn btn-warning viewALL"> View all products </button>
+        </form>
         <div class="linea"></div>
         <div class="row">
-            <% for(var i=0; i<8; i++) { %>
+            <% for(var i=0; i<lunghezzaJSON; i++) { %>
             <div class="col-lg-3 col-md-6">
                 <div id="<%= i %>" class="card" style="width: 15rem;">
                     <img class="card-img-top" src="<%= schemaJS[i].images.medium %>" alt="Card image cap">
@@ -32,6 +35,7 @@
 
         </div>
     </div>
+   
 </section>
 
 
